@@ -21,9 +21,9 @@
 # This command runs custom container tests and records the results in the 'custom' file.
 g++ tests.cpp && ./a.out > custom && rm a.out
 
-# Same tests from standard C++ containers
+# The same tests from the standard C++ containers. Output stored in the 'standard' file
 g++ -D STANDARD=1 tests.cpp && ./a.out > standard && rm a.out
 
-# Launch the shell
-./minishell
+# Displays the difference between the two outputs
+diff custom standard
 ```
